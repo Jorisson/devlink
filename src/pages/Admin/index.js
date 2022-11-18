@@ -27,7 +27,7 @@ export default function Admin (){
   useEffect(() =>{
     const linksRef = collection(db, "Links");
     const queryRef = query(linksRef, orderBy("created", "asc"))
-    const unsub = onSnapshot(queryRef, (snapshot) =>{
+    onSnapshot(queryRef, (snapshot) =>{
       let lista = [];
       snapshot.forEach((doc) =>{
         lista.push({
