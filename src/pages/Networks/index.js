@@ -12,9 +12,9 @@ import{
 import { toast } from 'react-toastify'
 
 export default function Networks(){
-  const [facebook, setFacebook] = useState("");
   const [instagram, setInstagram] = useState("");
-  const [youtube, setYoutube] = useState("");
+  const [github, setGithub] = useState("");
+  const [linkedin, setLinkedin] = useState("");
 
   useEffect(()=>{
     async function loadLinks(){
@@ -22,9 +22,9 @@ export default function Networks(){
       getDoc(docRef)
       .then((snapshot)=>{
         if(snapshot.data() !== undefined){
-          setFacebook(snapshot.data().facebook)
           setInstagram(snapshot.data().instagram)
-          setYoutube(snapshot.data().youtube)
+          setGithub(snapshot.data().github)
+          setLinkedin(snapshot.data().linkedin)
         }
       })
     }
@@ -36,9 +36,9 @@ export default function Networks(){
     e.preventDefault();
 
     setDoc(doc(db, "Social", "link"), {
-      facebook: facebook,
       instagram: instagram,
-      youtube: youtube,
+      github: github,
+      linkedin: linkedin,
       dateModify: new Date(),
     })
     .then(()=>{
@@ -54,23 +54,23 @@ export default function Networks(){
       <Header />
       <h1 className='title-social'>Suas redes sociais</h1>
       <form className='form' onSubmit={handleSave}>
-        <label className='label'>Link do facebook</label>
-        <Input
-          placeholder='Digite o link do facebook'
-          value={facebook}
-          onChange={(e) => setFacebook(e.target.value)}
-         />
         <label className='label'>Link do Instagram</label>
         <Input
           placeholder='Digite o link do instagram'
           value={instagram}
           onChange={(e) => setInstagram(e.target.value)}
          />
-        <label className='label'>Link do Youtube</label>
+        <label className='label'>Link do github</label>
         <Input
-          placeholder='Digite o link do youtube'
-          value={youtube}
-          onChange={(e) => setYoutube(e.target.value)}
+          placeholder='Digite o link do Github'
+          value={github}
+          onChange={(e) => setGithub(e.target.value)}
+         />
+        <label className='label'>Link do linkedin</label>
+        <Input
+          placeholder='Digite o link do linkedin'
+          value={linkedin}
+          onChange={(e) => setLinkedin(e.target.value)}
          />
          <button type='submit' className='btn-register'>
           Salvar links <MdAddLink size={24} color='#fff' />

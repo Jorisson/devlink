@@ -1,6 +1,6 @@
 import { Social } from '../../components/Social'
 import './home.css'
-import {FaInstagram, FaGithub, FaYoutube} from 'react-icons/fa'
+import {FaInstagram, FaGithub, FaLinkedin} from 'react-icons/fa'
 import {useState, useEffect} from 'react'
 import {db} from '../../services/fireBaseConection'
 import{
@@ -44,9 +44,9 @@ export default function Home (){
     .then((snapshot)=>{
       if(snapshot.data() !== undefined){
         setSocialLinks({
-          facebook: snapshot.data().facebook,
           instagram: snapshot.data().instagram,
-          youtube: snapshot.data().youtube
+          github: snapshot.data().github,
+          linkedin: snapshot.data().linkedin
         })
       }
     })
@@ -68,14 +68,14 @@ export default function Home (){
         ))}
         {links.length !== 0 && Object.keys(socialLinks).length > 0 && (
           <footer>
-            <Social url={socialLinks?.facebook}>
+            <Social url={socialLinks?.instagram}>
               <FaInstagram size={35} color="#fff" />
             </Social>
-            <Social url={socialLinks?.instagram}>
+            <Social url={socialLinks?.github}>
               <FaGithub size={35} color="#fff" />
             </Social>
-            <Social url={socialLinks?.youtube}>
-              <FaYoutube size={35} color="#fff" />
+            <Social url={socialLinks?.linkedin}>
+              <FaLinkedin size={35} color="#fff" />
             </Social>
           </footer>
         )}
