@@ -3,7 +3,7 @@
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-  padding: 0 6px;
+  padding: 0 6px 28px 6px;
 }
 
 .label{
@@ -49,6 +49,7 @@
   background-color: aqua;
   border-radius: 4px;
   padding: 14px 8px;
+  margin-bottom: 14px;
 }
 
 .preview{
