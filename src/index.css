@@ -6,7 +6,7 @@
 
 body{
   font-family: sans-serif;
-  background: linear-gradient(#232630, #050507);
+  background: linear-gradient(var(--bg-color-primary), var(--bg-color-secondary));
   min-height: 100vh;
 }
 

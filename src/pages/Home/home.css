@@ -9,13 +9,13 @@
 
 .home-container h1{
   margin-bottom: 14px;
-  color: #fff;
+  color: var(--font-color);
   font-size: 44px;
   padding-top: 94px;
 }
 
 .home-container span{
-  color: #f1f1f1;
+  color: var(--span-color);
   margin-bottom: 18px;
 }
 

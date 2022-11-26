@@ -11,6 +11,7 @@ import{
   orderBy,
   query,
 } from 'firebase/firestore'
+import { Theme } from '../../components/Theme'
 
 export default function Home (){
   const [links, setLinks] = useState([])
@@ -79,6 +80,7 @@ export default function Home (){
             </Social>
           </footer>
         )}
+        <Theme />
       </main>
     </div>
   )
