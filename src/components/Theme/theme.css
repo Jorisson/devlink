@@ -1,4 +1,4 @@
-.light,
+.dark,
 :root{
   --bg-color-primary: #232630;
   --bg-color-secondary: #050507;
@@ -6,7 +6,7 @@
   --span-color: #f1f1f1;
 }
 
-.dark,
+.light,
 :root:has(#light:checked)
 {
   --bg-color-primary: #fff;
